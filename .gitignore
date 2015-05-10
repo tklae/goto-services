@@ -1,8 +1,23 @@
-.gradle
-build/
+# Java
+*.class
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# Package Files
+*.jar
+*.war
+*.ear
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
+# IntelliJ files
+.idea
+*.iml
+*.iws
+*.ipr
+
+# Gradle
+**/build/
+**/out/
+out/
+.gradle/
+
+# osx
+**/*.DS_Store
+.DS_Store
