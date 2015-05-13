@@ -1,0 +1,3 @@
+Example Dropwizard Service.
+Hit /json for an example json endpoint (implemented in ExampleJsonResource.java)
+Hit /html for an example html endpoint (implemented in ExampleHtmlResource.java)
