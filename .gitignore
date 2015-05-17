@@ -19,7 +19,6 @@ out/
 .gradle/
 # except for gradle-wrapper.jar
 !**/gradle/wrapper/*.jar
-!**/exampleService/gradle/wrapper/*.jar
 
 # osx
 **/*.DS_Store
