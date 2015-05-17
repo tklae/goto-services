@@ -2,7 +2,7 @@ apply plugin: 'fatjar'
 apply plugin: 'application'
 
 // The main class of the application
-mainClassName = 'net.klaesener.api.ExampleService'
+mainClassName = 'com.gotocon.cdworkshop.ExampleService'
 
 // Add Gradle FatJar Plugin, see https://github.com/musketyr/gradle-fatjar-plugin
 buildscript {
@@ -40,5 +40,5 @@ fatJar {
 
 // Configure the run task to start the Dropwizard service
 run {
-   args 'server', './src/dist/config/example_api_dev.yml'
+   args 'server', './src/dist/config/dev.yml'
 }

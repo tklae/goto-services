@@ -1,10 +1,10 @@
-package net.klaesener.api.resources;
+package com.gotocon.cdworkshop.resources;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.gotocon.cdworkshop.configuration.ExampleServiceConfiguration;
 import com.yammer.dropwizard.views.View;
 import com.yammer.metrics.annotation.Timed;
-import net.klaesener.api.configuration.ExampleServiceConfiguration;
-import net.klaesener.api.views.FreemarkerView;
+import com.gotocon.cdworkshop.views.FreemarkerView;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

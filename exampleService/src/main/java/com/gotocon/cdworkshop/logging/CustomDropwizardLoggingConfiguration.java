@@ -1,4 +1,4 @@
-package net.klaesener.api.logging;
+package com.gotocon.cdworkshop.logging;
 
 import ch.qos.logback.classic.Level;
 import com.fasterxml.jackson.annotation.JsonProperty;

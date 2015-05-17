@@ -1,6 +1,6 @@
-package net.klaesener.api.filters;
+package com.gotocon.cdworkshop.filters;
 
-import net.klaesener.api.logging.ServiceMDC;
+import com.gotocon.cdworkshop.logging.ServiceMDC;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

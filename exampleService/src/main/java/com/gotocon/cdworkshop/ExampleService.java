@@ -1,15 +1,15 @@
-package net.klaesener.api;
+package com.gotocon.cdworkshop;
 
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.views.ViewBundle;
-import net.klaesener.api.configuration.ExampleServiceConfiguration;
-import net.klaesener.api.filters.LoggingFilter;
-import net.klaesener.api.health.StatusHealthCheck;
-import net.klaesener.api.logging.DropwizardLoggerFactory;
-import net.klaesener.api.resources.ExampleHtmlResource;
-import net.klaesener.api.resources.ExampleJsonResource;
+import com.gotocon.cdworkshop.configuration.ExampleServiceConfiguration;
+import com.gotocon.cdworkshop.filters.LoggingFilter;
+import com.gotocon.cdworkshop.health.StatusHealthCheck;
+import com.gotocon.cdworkshop.logging.DropwizardLoggerFactory;
+import com.gotocon.cdworkshop.resources.ExampleHtmlResource;
+import com.gotocon.cdworkshop.resources.ExampleJsonResource;
 
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;

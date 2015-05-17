@@ -1,7 +1,7 @@
-package net.klaesener.api.health;
+package com.gotocon.cdworkshop.health;
 
 import com.yammer.metrics.core.HealthCheck;
-import net.klaesener.api.configuration.ExampleServiceConfiguration;
+import com.gotocon.cdworkshop.configuration.ExampleServiceConfiguration;
 
 public class StatusHealthCheck extends HealthCheck{
 

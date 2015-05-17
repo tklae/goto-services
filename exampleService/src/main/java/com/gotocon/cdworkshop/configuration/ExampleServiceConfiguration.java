@@ -1,8 +1,8 @@
-package net.klaesener.api.configuration;
+package com.gotocon.cdworkshop.configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.gotocon.cdworkshop.logging.CustomDropwizardLoggingConfiguration;
 import com.yammer.dropwizard.config.Configuration;
-import net.klaesener.api.logging.CustomDropwizardLoggingConfiguration;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.Valid;

@@ -1,4 +1,4 @@
-package net.klaesener.api.configuration;
+package com.gotocon.cdworkshop.configuration;
 
 import javax.ws.rs.core.MediaType;
 

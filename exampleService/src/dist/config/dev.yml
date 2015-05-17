@@ -17,7 +17,7 @@ logging:
     root:
       level: INFO
       appenders: ["STDOUT"]
-    "net.klaesener.api":
+    "com.gotocon.cdworkshop":
       additive: false
       appenders: ["STDOUT_INTERNAL_CLASSES"]
 

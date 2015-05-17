@@ -1,4 +1,4 @@
-package net.klaesener.api.logging;
+package com.gotocon.cdworkshop.logging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.MDC;

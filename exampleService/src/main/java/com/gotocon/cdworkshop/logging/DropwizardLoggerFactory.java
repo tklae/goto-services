@@ -1,4 +1,4 @@
-package net.klaesener.api.logging;
+package com.gotocon.cdworkshop.logging;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import static net.klaesener.api.logging.CustomDropwizardLoggingConfiguration.AppenderConfiguration;
+import static com.gotocon.cdworkshop.logging.CustomDropwizardLoggingConfiguration.AppenderConfiguration;
 
 public class DropwizardLoggerFactory {
 

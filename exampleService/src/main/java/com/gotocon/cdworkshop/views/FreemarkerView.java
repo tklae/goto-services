@@ -1,4 +1,4 @@
-package net.klaesener.api.views;
+package com.gotocon.cdworkshop.views;
 
 import com.yammer.dropwizard.views.View;
 
