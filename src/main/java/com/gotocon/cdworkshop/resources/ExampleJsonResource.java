@@ -27,7 +27,7 @@ public class ExampleJsonResource {
         return new HelloWorldVO();
     }
 
-    private class HelloWorldVO {
+    static class HelloWorldVO {
         private String text;
 
         public HelloWorldVO() {
@@ -36,6 +36,21 @@ public class ExampleJsonResource {
 
         public String getText() {
             return text;
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            return org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals(this, other);
+        }
+
+        @Override
+        public int hashCode() {
+            return org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode(this);
+        }
+
+        @Override
+        public String toString() {
+            return org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString(this);
         }
     }
 }
