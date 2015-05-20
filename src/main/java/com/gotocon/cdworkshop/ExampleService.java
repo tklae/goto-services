@@ -1,5 +1,7 @@
 package com.gotocon.cdworkshop;
 
+import com.gotocon.cdworkshop.resources.WebsiteFragmentProviderResource;
+import com.gotocon.cdworkshop.resources.WebsiteFragmentReceiverResource;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
@@ -31,11 +33,15 @@ public class ExampleService extends Service<ExampleServiceConfiguration> {
 
         environment.addResource(new ExampleJsonResource());
         environment.addResource(new ExampleHtmlResource(configuration));
+        environment.addResource(new WebsiteFragmentProviderResource());
+        environment.addResource(new WebsiteFragmentReceiverResource(configuration));
 
         environment.addHealthCheck(new StatusHealthCheck(configuration));
 
         environment.addFilter(new LoggingFilter(), baseUrlFor(ExampleJsonResource.class));
         environment.addFilter(new LoggingFilter(), baseUrlFor(ExampleHtmlResource.class));
+        environment.addFilter(new LoggingFilter(), baseUrlFor(WebsiteFragmentProviderResource.class));
+        environment.addFilter(new LoggingFilter(), baseUrlFor(WebsiteFragmentReceiverResource.class));
     }
 
     private String baseUrlFor(Class resource) {

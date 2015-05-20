@@ -22,6 +22,10 @@ public class ExampleServiceConfiguration extends Configuration {
     @JsonProperty("logging")
     private CustomDropwizardLoggingConfiguration loggingConfig = new CustomDropwizardLoggingConfiguration();
 
+    @NotEmpty
+    @JsonProperty("clientEndpoints")
+    private String[] clientEndpoints = new String[0];
+
     public String getDefaultName() {
         return defaultName;
     }
@@ -32,5 +36,9 @@ public class ExampleServiceConfiguration extends Configuration {
 
     public CustomDropwizardLoggingConfiguration getLoggingConfig() {
         return loggingConfig;
+    }
+
+    public String[] getClientEndpoints() {
+        return clientEndpoints;
     }
 }

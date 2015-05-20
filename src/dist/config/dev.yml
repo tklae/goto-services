@@ -5,6 +5,9 @@ http:
 defaultName: ServiceUser
 versionNumber: 1.0
 
+clientEndpoints:
+ - "http://localhost:8092/provider"
+
 logging:
   appenders:
     STDOUT:
