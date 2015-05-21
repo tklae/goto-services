@@ -1,17 +1,18 @@
 package com.gotocon.cdworkshop;
 
-import com.gotocon.cdworkshop.resources.WebsiteFragmentProviderResource;
-import com.gotocon.cdworkshop.resources.WebsiteFragmentReceiverResource;
-import com.yammer.dropwizard.Service;
-import com.yammer.dropwizard.config.Bootstrap;
-import com.yammer.dropwizard.config.Environment;
-import com.yammer.dropwizard.views.ViewBundle;
 import com.gotocon.cdworkshop.configuration.ExampleServiceConfiguration;
 import com.gotocon.cdworkshop.filters.LoggingFilter;
 import com.gotocon.cdworkshop.health.StatusHealthCheck;
 import com.gotocon.cdworkshop.logging.DropwizardLoggerFactory;
 import com.gotocon.cdworkshop.resources.ExampleHtmlResource;
 import com.gotocon.cdworkshop.resources.ExampleJsonResource;
+import com.gotocon.cdworkshop.resources.WebsiteFragmentProviderResource;
+import com.gotocon.cdworkshop.resources.WebsiteFragmentReceiverResource;
+import com.yammer.dropwizard.Service;
+import com.yammer.dropwizard.assets.AssetsBundle;
+import com.yammer.dropwizard.config.Bootstrap;
+import com.yammer.dropwizard.config.Environment;
+import com.yammer.dropwizard.views.ViewBundle;
 
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
@@ -25,6 +26,7 @@ public class ExampleService extends Service<ExampleServiceConfiguration> {
     public void initialize(Bootstrap<ExampleServiceConfiguration> bootstrap) {
         bootstrap.setName("example-service");
         bootstrap.addBundle(new ViewBundle());
+        bootstrap.addBundle(new AssetsBundle("/com/gotocon/cdworkshop/assets", "/assets"));
     }
 
     @Override

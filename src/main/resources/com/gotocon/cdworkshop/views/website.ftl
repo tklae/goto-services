@@ -14,18 +14,29 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="initial-scale=1.0, width=100%, maximum-scale=1, user-scalable=0">
+
+    <link rel="stylesheet" href="/assets/css/panel_hover.css" media="screen">
 </head>
 <body>
-    <div id="main-container">
-        This is the content from all the different authors:
+    <div id="container">
+        <div class="panel"><div class="hover"> </div></div>
+        <div class="panel"><div class="hover"> </div></div>
+        <div class="panel"><div class="hover"> </div></div>
+        <div class="panel"><div class="hover"> </div></div>
+        <div class="panel"><div class="hover"> </div></div>
+        <div class="panel"><div class="hover"> </div></div>
+        <div class="panel"><div class="hover"> </div></div>
+        <div class="panel"><div class="hover"> </div></div>
 
         <#list templateData.fragments as fragment>
-            <div class="fragment">
-                <dl>
-                    <dt>Author:</dt><dd>${fragment.author}</dd>
-                    <dt>Comment:</dt><dd>${fragment.comment}</dd>
-                    <dt>Fragment:</dt><dd>${fragment.htmlPayload}</dd>
-                </dl>
+            <div class="panel">
+                <div class="hover">
+                    <dl>
+                        <dt>Author:</dt><dd>${fragment.author}</dd>
+                        <dt>Comment:</dt><dd>${fragment.comment}</dd>
+                        <dt>Fragment:</dt><dd>${fragment.htmlPayload}</dd>
+                    </dl>
+                </div>
             </div>
         </#list>
     </div>
