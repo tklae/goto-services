@@ -1,5 +1,4 @@
 #!/bin/bash
 
 # Global variables
-SERVICE_NAME="team-one"
-DEPLOY_DIR=/tmp/deploy
+GO_PIPELINE_NAME=${1-local}

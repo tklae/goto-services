@@ -3,6 +3,10 @@
 LIB_DIR=`pwd`
 source $LIB_DIR/common.sh
 
+echo "fetch dist.zip (from wherever)"
+
+echo "unzip dist"
+unzip dist-$GO_PIPELINE_NAME.zip -d $GO_PIPELINE_NAME
+
 echo "run service"
-cd $DEPLOY_DIR
-java -jar $SERVICE_NAME-service.jar server $SERVICE_NAME-config.yml
+java -jar $GO_PIPELINE_NAME/app-$GO_PIPELINE_NAME.jar server $GO_PIPELINE_NAME/config-$GO_PIPELINE_NAME.yml
