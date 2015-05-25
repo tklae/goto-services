@@ -1,7 +1,6 @@
 #!/bin/bash
 
-LIB_DIR=`pwd`
-source $LIB_DIR/common.sh
+GO_PIPELINE_NAME=${1-local}
 
 echo "fetch dist.zip (from wherever)"
 ssh vagrant@12.12.12.12
