@@ -1,9 +1,11 @@
 #!/bin/bash
 
 LIB_DIR=`pwd`
+SERVICE_ROOT=$LIB_DIR/../../../
 source $LIB_DIR/common.sh
 
 echo "copy files for dist.zip"
+cd $SERVICE_ROOT
 cp ./src/dist/config/dev.yml config-$GO_PIPELINE_NAME.yml
 cp ./build/libs/*.jar app-$GO_PIPELINE_NAME.jar
 
