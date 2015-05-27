@@ -11,4 +11,4 @@ zip dist-$GO_PIPELINE_NAME.zip config-$GO_PIPELINE_NAME.yml app-$GO_PIPELINE_NAM
 
 echo "deploy dist.zip (wherever)"
 # need an ssh key
-scp dist-$GO_PIPELINE_NAME.zip vagrant@12.12.12.12:/prod
+scp -i /root/.ssh/id_rsa -o "StrictHostKeyChecking no" dist-$GO_PIPELINE_NAME.zip vagrant@12.12.12.12:/prod
