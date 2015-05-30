@@ -2,35 +2,67 @@
  Thanks to Chris Ruppel, example taken from http://css3playground.com/hover/
 */
 body {
-    background-color: #5f9ea0;
+    background: #3B5166;
+    color: lightgray;
+
+    font-family: "Open Sans","Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3","微软雅黑","Helvetica Neue",Arial,sans-serif;
+    font-weight: normal;
+    text-rendering: optimizelegibility;
+    line-height: 1.6em;
 }
 
 #container {
-    width: 800px;
-    margin: 0 auto;
+    width: 1024px;
+    height: 1024px;
+    margin: auto;
 }
+
+h1 {
+    font-size: 40px;
+    line-height: 0.8em;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.8em;
+    letter-spacing: -0.04em;
+
+}
+
+
 .panel {
     float: left;
-    width: 300px;
-    height: 300px;
-    margin: -20px;
+    width: 375px;
+    height: 375px;
+    margin: -45px;
     position: relative;
 }
 
+.panel dl {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 /* -- make sure to declare a default for every property that you want animated -- */
+.panel .OK {
+    background-color: rgba(0, 230, 0, .5)
+}
+
+.panel .NOK {
+    background-color: rgba(255, 15, 0, .5)
+}
+
 .panel .hover {
     float: none;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
-    width: 300px;
-    height: 300px;
+    width: 375px;
+    height: 375px;
     border: 1px solid #aaa;
     border-top: 1px solid #888;
     border-left: 1px solid #888;
-    background-color: #dc143c; /*#6b7077;*/
-    text-align: center;
+    text-align: left;
+    overflow: hidden;
 
     -o-transform: scale(.5);
     -moz-transform: scale(.5);
@@ -41,13 +73,13 @@ body {
     -webkit-box-shadow: inset 1px 2px 8px rgba(0,0,0,0.7);
     box-shadow: inset 1px 2px 8px rgba(0,0,0,0.7);
 
-
     /* -- transition is the magic sauce for animation -- */
     -o-transition: all .15s;
     -moz-transition: all .15s ease-out;
     -webkit-transition: all .15s ease-out;
     transition: all .15s ease-out;
 }
+
 .panel .hover:hover {
     z-index: 1000;
     border-color: #bbb;
