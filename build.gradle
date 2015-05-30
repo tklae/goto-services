@@ -81,12 +81,38 @@ test {
     }
 }
 
-task copyConfigFiles(type: Copy) {
-    from 'src/dist/config'
-    into 'build/libs'
+task copyFatJar(type: Copy, dependsOn: fatJar) {
+    outputs.upToDateWhen { false }
+    from 'build/libs'
+    into 'build/dist'
+    include "**/*.jar"
 }
 
-task buildFatJar(dependsOn: [fatJar, copyConfigFiles]) {
+task copyConfigFiles(type: Copy) {
+    outputs.upToDateWhen { false }
+    from 'src/dist/config'
+    into 'build/dist/config'
+    include "**/*.yml"
+    eachFile {
+        def configFileName = it.name
+        println("Creating runner for: $configFileName")
+        def scriptDir = "${projectDir}/build/dist/scripts"
+        def runnerName = "run_" + configFileName.substring(0, configFileName.indexOf('.')) + ".sh"
+        def content =
+'''#!/bin/bash
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
+
+java -jar $DIR/goto-services-fat.jar server $DIR/config/''' + configFileName
+        println(content)
+        new File(scriptDir).mkdirs()
+
+        def runner = new File("${scriptDir}/$runnerName")
+        runner.withWriter() { it << content }
+        runner.executable = true
+    }
+}
+
+task buildDist(dependsOn: [copyFatJar, copyConfigFiles]) {
 }
 
 // Hide output subfolders from IntelliJ for each subproject
