@@ -12,6 +12,3 @@ zip dist-$SERVICE_NAME.zip config-$SERVICE_NAME.yml app-$SERVICE_NAME.jar
 
 echo "deploy dist-$SERVICE_NAME.zip on $DEPLOY_DIR"
 scp -i /root/.ssh/id_rsa -o "StrictHostKeyChecking no" dist-$SERVICE_NAME.zip $DEPLOY_DIR
-
-
-
