@@ -1,13 +1,8 @@
 #!/bin/bash
 
-GO_PIPELINE_NAME=${1-local}
+SERVICE_NAME=${GO_PIPELINE_NAME-local}
+DEPLOY_DIR=/prod/$SERVICE_NAME
 
-echo "fetch dist.zip (from wherever)"
-ssh vagrant@12.12.12.12
-cd /prod
-
-echo "unzip dist"
-unzip dist-$GO_PIPELINE_NAME.zip -d $GO_PIPELINE_NAME
-
-echo "run service"
-java -jar $GO_PIPELINE_NAME/app-$GO_PIPELINE_NAME.jar server $GO_PIPELINE_NAME/config-$GO_PIPELINE_NAME.yml
+echo "run $SERVICE_NAME service"
+ssh -i /root/.ssh/id_rsa -o "StrictHostKeyChecking no" vagrant@12.12.12.12 "unzip /prod/dist-$SERVICE_NAME.zip -d $DEPLOY_DIR"
+ssh -i /root/.ssh/id_rsa -o "StrictHostKeyChecking no" vagrant@12.12.12.12 "java -jar $DEPLOY_DIR/app-$SERVICE_NAME.jar server $DEPLOY_DIR/config-$SERVICE_NAME.yml"
