@@ -102,7 +102,7 @@ task copyConfigFiles(type: Copy) {
 '''#!/bin/bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
 
-java -jar $DIR/goto-services-fat.jar server $DIR/config/''' + configFileName
+nohup java -jar $DIR/goto-services-fat.jar server $DIR/config/''' + configFileName + ''' &> /dev/null &'''
         println(content)
         new File(scriptDir).mkdirs()
 
