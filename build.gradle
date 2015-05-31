@@ -95,20 +95,31 @@ task copyConfigFiles(type: Copy) {
     include "**/*.yml"
     eachFile {
         def configFileName = it.name
-        println("Creating runner for: $configFileName")
+        println("Creating start and stop scripts for: $configFileName")
         def scriptDir = "${projectDir}/build/dist/scripts"
-        def runnerName = "run_" + configFileName.substring(0, configFileName.indexOf('.')) + ".sh"
-        def content =
+        def baseFileName = configFileName.substring(0, configFileName.indexOf('.')) + ".sh"
+        def startScriptName = "start_" + baseFileName
+        def stopScriptName = "stop_" + baseFileName
+
+        def startScriptContent =
 '''#!/bin/bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
 
 nohup java -jar $DIR/goto-services-fat.jar server $DIR/config/''' + configFileName + ''' &> /dev/null &'''
-        println(content)
+
+        def stopScriptContent =
+'''#!/bin/bash
+`kill \\`ps -ef | grep ''' + configFileName + ''' | grep -v grep | awk '{print $2}'\\``'''
+
         new File(scriptDir).mkdirs()
 
-        def runner = new File("${scriptDir}/$runnerName")
-        runner.withWriter() { it << content }
+        def runner = new File("${scriptDir}/$startScriptName")
+        runner.withWriter() { it << startScriptContent }
         runner.executable = true
+
+        def stopper = new File("${scriptDir}/$stopScriptName")
+        stopper.withWriter() { it << stopScriptContent }
+        stopper.executable = true
     }
 }
 
