@@ -20,5 +20,6 @@ status="fail"
   set -e
 
   if [ "${status}" != "success" ]; then
-    fatal "healthcheck failed"
+    echo "healthcheck failed"
+    exit 1
   fi
