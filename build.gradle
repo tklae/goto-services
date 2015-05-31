@@ -126,6 +126,15 @@ nohup java -jar $DIR/goto-services-fat.jar server $DIR/config/''' + configFileNa
 task buildDist(dependsOn: [copyFatJar, copyConfigFiles]) {
 }
 
+task healthcheck(type:Exec) {
+    def url = 'http://localhost:8093/healthcheck'
+    executable = 'curl'
+    args = ['-fsS', url, '-m', '10']
+    doFirst {
+        println "Checking Service for healthiness: $url.\nExit code 28 indicates a timeout/service not available, exit code 22 means the service is up but unhealthy."
+    }
+}
+
 // Hide output subfolders from IntelliJ for each subproject
 idea {
     module {
