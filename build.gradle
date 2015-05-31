@@ -88,6 +88,13 @@ task copyFatJar(type: Copy, dependsOn: fatJar) {
     include "**/*.jar"
 }
 
+task copyHealthcheck(type: Copy) {
+    outputs.upToDateWhen { false }
+    from 'src/dist/scripts'
+    into 'build/dist/scripts'
+    include "healthcheck.sh"
+}
+
 task copyConfigFiles(type: Copy) {
     outputs.upToDateWhen { false }
     from 'src/dist/config'
@@ -123,7 +130,7 @@ nohup java -jar $DIR/goto-services-fat.jar server $DIR/config/''' + configFileNa
     }
 }
 
-task buildDist(dependsOn: [copyFatJar, copyConfigFiles]) {
+task buildDist(dependsOn: [copyFatJar, copyConfigFiles, copyHealthcheck]) {
 }
 
 task healthcheck(type:Exec) {
