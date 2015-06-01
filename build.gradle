@@ -83,9 +83,8 @@ test {
 
 task copyFatJar(type: Copy, dependsOn: fatJar) {
     outputs.upToDateWhen { false }
-    from 'build/libs'
-    into 'build/dist'
-    include "**/*.jar"
+    from 'build/libs/*.jar'
+    into 'build/dist/goto-services.jar'
 }
 
 task copyHealthcheck(type: Copy) {
@@ -110,7 +109,7 @@ task copyConfigFiles(type: Copy) {
 
         def startScriptContent =
 '''#!/bin/bash
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
+export DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
 
 nohup java -jar $DIR/goto-services-fat.jar server $DIR/config/''' + configFileName + ''' &> /dev/null &'''
 
