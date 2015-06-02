@@ -1,14 +1,13 @@
 #!/bin/bash
 
-SERVICE_NAME=${GO_PIPELINE_NAME-local}
-DEPLOY_DIR="vagrant@12.12.12.12:/prod"
+SERVICE_NAME=${SERVICE_NAME-goto-services}
 
-echo "copy files for dist-$SERVICE_NAME.zip"
-cp ./src/dist/config/dev.yml config-$SERVICE_NAME.yml
-cp ./build/libs/*-fat.jar app-$SERVICE_NAME.jar
+STAGE=${STAGE-dev}
+STAGE=$(echo $STAGE | tr '[A-Z]' '[a-z]')
+DEPLOY_DIR="vagrant@12.12.12.12:/$STAGE"
 
 echo "create dist-$SERVICE_NAME.zip"
-zip dist-$SERVICE_NAME.zip config-$SERVICE_NAME.yml app-$SERVICE_NAME.jar
+zip dist-$SERVICE_NAME.zip ./dist
 
-echo "deploy dist-$SERVICE_NAME.zip on $DEPLOY_DIR"
+echo "deploy dist-$SERVICE_NAME.zip on stage $STAGE"
 scp -i /root/.ssh/id_rsa -o "StrictHostKeyChecking no" dist-$SERVICE_NAME.zip $DEPLOY_DIR
