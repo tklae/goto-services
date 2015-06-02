@@ -102,6 +102,7 @@ task copyConfigFiles(type: Copy) {
     from 'src/dist/config'
     into 'build/dist/config'
     include "**/*.yml"
+    fileMode 0755
     eachFile {
         def configFileName = it.name
         println("Creating start and stop scripts for: $configFileName")
@@ -124,13 +125,9 @@ nohup java -jar $DIR/''' + serviceName +  '''.jar server $DIR/config/''' + confi
 
         def runner = new File("${scriptDir}/$startScriptName")
         runner.withWriter() { it << startScriptContent }
-        runner.setExecutable(true, false)
-        runner.setReadable(true, false)
 
         def stopper = new File("${scriptDir}/$stopScriptName")
         stopper.withWriter() { it << stopScriptContent }
-        stopper.setExecutable(true, false)
-        stopper.setReadable(true, false)
     }
 }
 
