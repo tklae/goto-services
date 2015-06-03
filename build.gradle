@@ -94,6 +94,7 @@ task copyHealthcheck(type: Copy) {
     outputs.upToDateWhen { false }
     from 'src/dist/scripts'
     into 'build/dist/scripts'
+    fileMode 0755
     include "healthcheck.sh"
 }
 
