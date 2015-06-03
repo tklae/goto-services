@@ -9,7 +9,7 @@ STAGE=$(echo $STAGE | tr '[A-Z]' '[a-z]')
 DEPLOY_DIR="vagrant@12.12.12.12:/environment/$STAGE"
 
 echo "create dist-$SERVICE_NAME.zip"
-CD $SERVICE_ROOT/build/dist/
+cd $SERVICE_ROOT/build/dist/
 chmod +x ./scripts/*.sh
 zip -r dist-$SERVICE_NAME.zip .
 
