@@ -1,7 +1,6 @@
 #!/bin/bash
 
 SERVICE_NAME=${SERVICE_NAME-goto-services}
-
 SERVICE_ROOT=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..
 
 STAGE=${STAGE-dev}
