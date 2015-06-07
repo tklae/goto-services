@@ -2,8 +2,8 @@
  Thanks to Chris Ruppel, example taken from http://css3playground.com/hover/
 */
 body {
-    background: #3B5166;
-    color: #0078BF;
+    background: #0078BF;
+    color: lightgrey;
 
     font-family: "Open Sans","Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3","微软雅黑","Helvetica Neue",Arial,sans-serif;
     font-weight: normal;
@@ -44,11 +44,11 @@ h1 {
 
 /* -- make sure to declare a default for every property that you want animated -- */
 .panel .OK {
-    background-color: rgba(17, 170, 88, .5)
+    background-color: rgba(17, 170, 88, 1.0)
 }
 
 .panel .NOK {
-    background-color: rgba(255, 15, 0, .5)
+    background-color: rgba(255, 15, 0, 1.0)
 }
 
 .panel .hover {
