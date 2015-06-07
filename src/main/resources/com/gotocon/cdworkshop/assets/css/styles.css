@@ -3,7 +3,7 @@
 */
 body {
     background: #3B5166;
-    color: lightgray;
+    color: #0078BF;
 
     font-family: "Open Sans","Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3","微软雅黑","Helvetica Neue",Arial,sans-serif;
     font-weight: normal;
@@ -29,11 +29,12 @@ h1 {
 
 
 .panel {
-    float: left;
+    position: relative;
     width: 375px;
     height: 375px;
-    margin: -45px;
-    position: relative;
+    margin-left: -185px;
+    margin-top: 50px;
+    left: 50%;
 }
 
 .panel dl {
@@ -43,7 +44,7 @@ h1 {
 
 /* -- make sure to declare a default for every property that you want animated -- */
 .panel .OK {
-    background-color: rgba(0, 230, 0, .5)
+    background-color: rgba(17, 170, 88, .5)
 }
 
 .panel .NOK {
