@@ -24,7 +24,7 @@ task wrapper(type: Wrapper) {
 project.ext {
     dropwizardVersion = '0.6.2'
 
-    serviceName = 'goto-services'
+    serviceName = 'goto-services-master'
 }
 
 // The main class of the application
@@ -111,7 +111,7 @@ nohup java -jar $DIR/''' + serviceName +  '''.jar server $DIR/config/''' + confi
 
         def stopScriptContent =
 '''#!/bin/bash
-`kill \\`ps -ef | grep ''' + configFileName + ''' | grep -v grep | awk '{print $2}'\\``'''
+`kill \\`ps -ef | grep ''' + serviceName + ''' | grep ''' + configFileName + ''' | grep -v grep | awk '{print $2}'\\``'''
 
         new File(scriptDir).mkdirs()
 
