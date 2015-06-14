@@ -7,4 +7,4 @@
 
 ## Service description
 
-Simple dropwizard service which delivers a payload to a calling service.
+Simple Dropwizard service which delivers a payload to a calling service.
