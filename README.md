@@ -4,6 +4,7 @@
 * Go to ./exampleService and run `./gradlew run` to start the embedded jetty
 * `localhost:8092/json` will hit the example JSON endpoint
 * `localhost:8092/html` will hit the example HTML endpoint
+* `localhost:8093` shows you the healthcheck page
 
 ## Service description
 
