@@ -23,6 +23,6 @@ public class WebsiteFragmentProviderResource {
     @Timed
     public WebsiteFragmentVO fetch() throws JsonProcessingException {
         LOGGER.debug("Fetching HelloWorld!");
-        return new WebsiteFragmentVO("Tim", "This is a very beautiful div", "<div>Hello, World!</div>");
+        return new WebsiteFragmentVO("Tobi", "This is a another marvellous div", "<div>G'day all!</div>");
     }
 }
