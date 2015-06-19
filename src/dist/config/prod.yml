@@ -1,12 +1,12 @@
 http:
-  port: 8094
-  adminPort: 8095
+  port: 8096
+  adminPort: 8097
 
 defaultName: Productive Service User
 versionNumber: 1.0
 
 clientEndpoints:
- - "http://localhost:8094/provider"
+ - "http://localhost:8096/provider"
 
 logging:
   appenders:
