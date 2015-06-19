@@ -24,7 +24,7 @@ task wrapper(type: Wrapper) {
 project.ext {
     dropwizardVersion = '0.6.2'
 
-    serviceName = 'goto-services-master'
+    serviceName = 'goto-services-one'
 }
 
 // The main class of the application
