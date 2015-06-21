@@ -1,12 +1,12 @@
 http:
-  port: 8092
-  adminPort: 8093
+  port: 8096
+  adminPort: 8097
 
 defaultName: ServiceUser
 versionNumber: 1.0
 
 clientEndpoints:
- - "http://localhost:8092/provider"
+ - "http://localhost:8096/provider"
 
 logging:
   appenders:
